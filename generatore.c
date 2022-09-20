@@ -45,14 +45,15 @@ int main(){
     char char1[36] = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','0','1','2','3'
 ,'4','5','6','7','8','9'};//stringa costante da cui vado a prendere i caratteri scrivibili
 
-    char* ArrayString[NWORDS];
-	int index = 0;
+    char* ArrayString[NWORDS];//stringa di puntatori
+    int wordlength;
+    int idx;
     FILE *fp;//apro txt dove andrò a scrivere
     fp=fopen("prova.txt","w+");
     //contatori
-    int wordlength;
-    int idx;
+	int index = 0;
     int ii;
+    //risultato
     int result;
 
     for(int i=0;i< NWORDS;i++){// finchè non ne ho generati un Milione
@@ -68,7 +69,7 @@ int main(){
             ArrayString[i][index]=char1[idx];//genera carattere e lo inserisce nell'array 
    
 	    }
-        ArrayString[i][wordlength]='\0';
+        ArrayString[i][wordlength]='\0';//carattere di fine stringa obbligatortio
 
         /*if (i==3 || i==8)
         {
